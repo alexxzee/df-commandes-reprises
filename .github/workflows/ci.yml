@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  qualite:
+    name: Lint et tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Lint, sans aucun avertissement toléré
+        run: npm run lint -- --max-warnings=0
+      - name: Tests
+        run: npm test
+      - name: Couverture du calcul des devis, 80 % minimum
+        run: >
+          node --disable-warning=ExperimentalWarning --test --experimental-test-coverage
+          --test-coverage-include='src/devis/**'
+          --test-coverage-lines=80 --test-coverage-branches=80
+
+  secrets:
+    name: Détection de secrets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Installer gitleaks
+        run: |
+          curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz \
+            | tar xz -C /usr/local/bin gitleaks
+      - name: Analyser tout l'historique
+        run: gitleaks git --no-banner --redact .
+
+  revue-ia:
+    name: Revue IA (Copilot CLI)
+    if: github.event_name == 'pull_request'
+    needs: [qualite, secrets]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
+    steps:
+      - name: Vérifier la présence du jeton Copilot
+        id: jeton
+        run: |
+          if [ -z "$COPILOT_GITHUB_TOKEN" ]; then
+            echo "::notice::Secret COPILOT_PAT absent : revue IA sautée, les autres contrôles restent bloquants."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v5
+        if: steps.jeton.outputs.present == 'true'
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        if: steps.jeton.outputs.present == 'true'
+        with:
+          node-version: 24
+      - name: Installer la Copilot CLI
+        if: steps.jeton.outputs.present == 'true'
+        run: npm install -g @github/copilot
+      - name: Préparer le prompt de revue (consignes versionnées + diff de la PR)
+        if: steps.jeton.outputs.present == 'true'
+        run: |
+          {
+            cat .github/prompts/revue-pr.txt
+            echo
+            echo '--- DIFF DE LA PULL REQUEST ---'
+            git diff --unified=3 "origin/${{ github.base_ref }}...HEAD" -- . ':!package-lock.json' | head -c 60000
+          } > "$RUNNER_TEMP/prompt-revue.txt"
+      - name: Revue par Copilot
+        id: revue
+        if: steps.jeton.outputs.present == 'true'
+        uses: actions/ai-inference@v3
+        with:
+          prompt-file: ${{ runner.temp }}/prompt-revue.txt
+          model: ''
+      - name: Publier la revue en commentaire de PR
+        if: steps.jeton.outputs.present == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --body-file "${{ steps.revue.outputs.response-file }}"
