@@ -1,0 +1,4 @@
+# Fuites connues, clé révoquée le 2026-10-02 (voir docs/securite.md).
+# L’empreinte dépend du dépôt : la recopier depuis le rapport de « gitleaks git ».
+91f09550e599ff25bed3c7d827f368c4782fdf09:src/config.js:generic-api-key:4
+1ddf3b056cbc863c3ffe033f88d139f1ee4ecb60:.env:generic-api-key:2

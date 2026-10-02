@@ -11,7 +11,8 @@
     "test:caracterisation": "node --disable-warning=ExperimentalWarning --test test/caracterisation/",
     "bench": "node --disable-warning=ExperimentalWarning scripts/bench-export.js",
     "lint": "eslint .",
-    "start:local": "node --disable-warning=ExperimentalWarning --env-file=.env src/server.js"
+    "start:local": "node --disable-warning=ExperimentalWarning --env-file=.env src/server.js",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "engines": {
     "node": ">=22.13"

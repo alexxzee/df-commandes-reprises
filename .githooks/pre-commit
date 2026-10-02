@@ -1,0 +1,8 @@
+#!/bin/sh
+# Bloque un commit qui contient un secret. Activé par « npm install »
+# (script prepare : git config core.hooksPath .githooks).
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "pre-commit : gitleaks est introuvable. Installez-le (https://github.com/gitleaks/gitleaks#installing) ou ajoutez-le au PATH." >&2
+  exit 1
+fi
+exec gitleaks git --pre-commit --staged --no-banner --redact
