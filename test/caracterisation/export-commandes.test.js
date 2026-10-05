@@ -1,3 +1,4 @@
+// Fichier de la formation : ne pas modifier.
 'use strict';
 
 // Tests de caractérisation : ils figent le comportement ACTUEL de l'export,
