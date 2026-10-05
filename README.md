@@ -8,3 +8,5 @@ Toutes les clés et tous les mots de passe présents dans ce dépôt, y compris 
 npm install
 npm start
 ```
+
+Pour la formation : lire `FORMATION.md`.

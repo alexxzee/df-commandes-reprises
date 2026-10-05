@@ -1,3 +1,4 @@
+// Fichier de la formation : ne pas modifier.
 'use strict';
 
 // Mesure le temps de l'export comptable sur un volume réaliste.
