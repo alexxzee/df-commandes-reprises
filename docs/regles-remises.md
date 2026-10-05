@@ -1,3 +1,5 @@
+<!-- Fichier de la formation : ne pas modifier. -->
+
 # Règles de calcul des devis
 
 Document de référence validé par Marc Delaunay (DAF de Delmas & Fournier) le 12 janvier 2022. **Toute évolution du calcul des devis doit respecter ces règles.**

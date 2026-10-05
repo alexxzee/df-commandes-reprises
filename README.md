@@ -61,3 +61,5 @@ npm run bench               # temps de l’export comptable
 - Base en mémoire : les données sont perdues à l’arrêt.
 - L’appel réel au transporteur est désactivé hors production.
 - L’export comptable est lent au-delà de quelques milliers de commandes.
+
+Pour la formation : lire `FORMATION.md`.

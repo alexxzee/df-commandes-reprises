@@ -1,3 +1,4 @@
+// Fichier de la formation : ne pas modifier.
 'use strict';
 
 const { ouvrirBase, peupler } = require('./db');
