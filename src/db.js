@@ -1,3 +1,4 @@
+// Fichier de la formation : ne pas modifier.
 'use strict';
 
 const { DatabaseSync } = require('node:sqlite');
