@@ -9,6 +9,7 @@
     "test": "node --disable-warning=ExperimentalWarning --test",
     "test:couverture": "node --disable-warning=ExperimentalWarning --test --experimental-test-coverage --test-coverage-include=src/**",
     "test:caracterisation": "node --disable-warning=ExperimentalWarning --test test/caracterisation/*.test.js",
+    "test:intersession": "node --disable-warning=ExperimentalWarning --test exercices/intersession/*.js",
     "bench": "node --disable-warning=ExperimentalWarning scripts/bench-export.js",
     "arrondi": "node scripts/verifier.js arrondi",
     "arrondi:appli": "node scripts/verifier.js arrondi appli",
@@ -17,6 +18,7 @@
     "recherche": "node scripts/verifier.js recherche",
     "devis-du-jour": "node scripts/verifier.js devis-du-jour",
     "recette": "node scripts/verifier.js recette",
+    "intersession": "node scripts/verifier.js intersession",
     "lint": "eslint .",
     "start:local": "node --disable-warning=ExperimentalWarning --env-file=.env src/server.js"
   },
