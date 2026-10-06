@@ -1,6 +1,6 @@
 ---
 name: testeur-web
-description: Testeur de l'équipe. Écrit des tests node:test pour une route web, les lance et signale les défauts sans corriger le code. Appelé par l'orchestrateur.
+description: Testeur de l'équipe. Écrit des tests node:test pour une route web, les lance et signale les défauts sans corriger le code. Appelé par chef-equipe-web.
 tools: Read, Grep, Glob, Edit, Write, Bash
 ---
 <!-- Fichier de la formation : ne pas modifier. -->
