@@ -4,16 +4,37 @@ Fichier de la formation : ne pas modifier.
 
 ## Installation, une fois
 
-Dans un terminal, depuis le dossier où vous rangez vos projets :
+### 1. Créer votre dépôt depuis le modèle
+
+1. Ouvrez https://github.com/alexxzee/df-commandes, connecté à votre compte GitHub.
+2. Bouton **Use this template**, puis **Create a new repository**. Propriétaire : votre compte. Nom : `df-commandes`. Cochez **Private**, puis **Create repository**.
+3. Dans votre nouveau dépôt : **Settings**, **Collaborators**, **Add people** : ajoutez le compte GitHub du formateur. Il lira votre travail ; vous restez propriétaire du dépôt.
+
+### 2. Cloner votre dépôt et les vérificateurs, côte à côte
+
+Dans votre dépôt, bouton **Code**, onglet **HTTPS** : copiez l’adresse. Puis, dans un terminal ouvert sur le dossier où vous rangez vos projets :
 
 ```bash
-git clone https://github.com/alexxzee/df-commandes
+git clone <adresse de votre dépôt>
 git clone https://github.com/alexxzee/df-verifications
 cd df-commandes
 npm install
+npm test
 ```
 
-Les deux dossiers doivent être **côte à côte**. Ouvrez ensuite **seulement** `df-commandes` dans VS Code (**Fichier**, **Ouvrir le dossier**). `df-verifications` contient les vérificateurs des exercices : les commandes ci-dessous l’appellent, vous n’avez pas à l’ouvrir.
+`npm test` se termine par `ℹ fail 0`. Les deux dossiers doivent être **côte à côte**. Ouvrez ensuite **seulement** `df-commandes` dans VS Code (**Fichier**, **Ouvrir le dossier**) : l’assistant lit tout le dossier ouvert, et `df-verifications` contient les cas attendus des exercices. Les commandes ci-dessous l’appellent, vous n’avez pas à l’ouvrir.
+
+## Rendre votre travail : un push par jour
+
+Ni branche ni pull request par exercice : vous travaillez sur `main`. En fin de journée, une fois, dans le terminal ouvert sur `df-commandes` :
+
+```bash
+git add -A
+git commit -m "Travail du jour"
+git push
+```
+
+Le formateur lit votre dépôt sur GitHub.
 
 ## Commandes de vérification
 
@@ -27,6 +48,8 @@ Les deux dossiers doivent être **côte à côte**. Ouvrez ensuite **seulement**
 | `npm run reference` | la fonction exportée par `src/validation/reference.js` |
 | `npm run test:caracterisation` | le comportement de l’export comptable |
 | `npm run bench` | le temps de l’export comptable |
+
+Si une commande affiche « Vérificateur introuvable », `df-verifications` n’est pas cloné à côté de `df-commandes` : la commande indique quoi taper.
 
 ## Fichiers à remplir pendant les exercices
 
