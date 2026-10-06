@@ -1,6 +1,6 @@
 ---
-name: orchestrateur
-description: Coordonne une petite fonctionnalité de D&F Commandes en déléguant au dev web, au testeur et au relecteur. Ne modifie aucun fichier lui-même. Se lance par claude --agent orchestrateur.
+name: chef-equipe-web
+description: Chef d'équipe web. Coordonne une petite fonctionnalité de D&F Commandes en déléguant à dev-web, testeur-web et relecteur-web. Ne modifie aucun fichier lui-même. Se lance par claude --agent chef-equipe-web.
 tools: Agent(dev-web, testeur-web, relecteur-web), Read, Grep, Glob
 ---
 <!-- Fichier de la formation : ne pas modifier. -->
