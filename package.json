@@ -14,6 +14,9 @@
     "arrondi:appli": "node scripts/verifier.js arrondi appli",
     "prix": "node scripts/verifier.js prix",
     "reference": "node scripts/verifier.js reference",
+    "recherche": "node scripts/verifier.js recherche",
+    "devis-du-jour": "node scripts/verifier.js devis-du-jour",
+    "recette": "node scripts/verifier.js recette",
     "lint": "eslint .",
     "start:local": "node --disable-warning=ExperimentalWarning --env-file=.env src/server.js"
   },
