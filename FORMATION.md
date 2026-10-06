@@ -46,6 +46,10 @@ Le formateur lit votre dépôt sur GitHub.
 | `npm run arrondi:appli` | `arrondir`, dans `src/devis/calcul.js` |
 | `npm run prix` | `formaterPrix`, dans `src/utils/format.js` |
 | `npm run reference` | la fonction exportée par `src/validation/reference.js` |
+| `npm run recherche` | la recherche de produits, `GET /produits?q=` |
+| `npm run devis-du-jour` | la page `GET /devis/du-jour` (exercice des agents) |
+| `npm run recette` | la durée de validité des devis, contre les décisions du métier |
+| `npm test -- exercices/agents/par-defaut.js` | les tests d’un fichier de l’atelier « agent testeur » (même forme pour `testeur.js`) |
 | `npm run test:caracterisation` | le comportement de l’export comptable |
 | `npm run bench` | le temps de l’export comptable |
 
@@ -58,3 +62,7 @@ Ils existent déjà, vides : ouvrez-les et remplissez-les, sans créer de dossie
 ## Fichiers à ne pas modifier
 
 Les fichiers qui commencent par le commentaire « Fichier de la formation : ne pas modifier. », ainsi que `package.json`, `package-lock.json` et `test/caracterisation/export-attendu.csv`, qui ne peuvent pas porter de commentaire.
+
+Les agents fournis sont aussi des fichiers de la formation : ne les modifiez pas. Leur en-tête doit rester en première ligne, la mention vient donc juste après lui. Ce sont `.github/agents/refacto.agent.md`, `orchestrateur.agent.md`, `dev-web.agent.md`, `testeur-web.agent.md` et `relecteur-web.agent.md`, les quatre fichiers de `.claude/agents/`, et les agents fournis dans `.codex/agents/` (`refacto.toml`, `dev-web.toml`, `testeur-web.toml`, `relecteur-web.toml`). La spec `docs/conditions-paiement.md`, la constitution `specs/constitution.md` et la spec reçue `specs/annulation-commande.md` ne se modifient pas non plus.
+
+Les fichiers d’agent `.github/agents/relecteur-securite.agent.md` et `testeur.agent.md`, les instructions `AGENTS.md`, `CLAUDE.md` et `.github/copilot-instructions.md`, ainsi que les fichiers de `specs/` marqués « À compléter », sont à remplir pendant les exercices.
