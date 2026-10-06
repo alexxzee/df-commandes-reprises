@@ -42,7 +42,7 @@ jobs:
           URL=https://github.com/gitleaks/gitleaks/releases/download
           curl -sSfL "$URL/v$V/gitleaks_${V}_linux_x64.tar.gz" | tar xz -C /usr/local/bin gitleaks
       - name: Analyser tout l'historique
-        run: gitleaks git --no-banner --redact --log-opts="HEAD" .
+        run: gitleaks git -v --no-banner --redact --log-opts="HEAD" .
 
   revue-ia:
     name: Revue IA (Copilot CLI)
