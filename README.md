@@ -62,4 +62,8 @@ npm run bench               # temps de l’export comptable
 - L’appel réel au transporteur est désactivé hors production.
 - L’export comptable est lent au-delà de quelques milliers de commandes.
 
-Pour la formation : lire `FORMATION.md`.
+## Pour la formation
+
+1. Sur https://github.com/alexxzee/df-commandes : **Use this template**, **Create a new repository**, dépôt **privé** nommé `df-commandes`, sur votre compte.
+2. Dans votre dépôt : **Settings**, **Collaborators** : ajoutez le compte GitHub du formateur.
+3. Clonez votre dépôt et `df-verifications` côte à côte, puis `npm install`, et rendez votre travail par un push en fin de journée : détail dans `FORMATION.md`.
