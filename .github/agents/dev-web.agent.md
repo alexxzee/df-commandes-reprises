@@ -1,6 +1,6 @@
 ---
 name: dev-web
-description: Développeur web de l'équipe. Implémente une route Express et sa page HTML dans les fichiers que la consigne autorise. Appelé par l'orchestrateur.
+description: Développeur web de l'équipe. Implémente une route Express et sa page HTML dans les fichiers que la consigne autorise. Appelé par chef-equipe-web.
 tools: ['read', 'search', 'edit', 'execute']
 user-invocable: false
 ---
