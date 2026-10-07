@@ -54,6 +54,9 @@ Le formateur lit votre dépôt sur GitHub.
 | `npm run bench` | le temps de l’export comptable |
 | `npm run test:intersession` | les tests du travail intersession, dans `exercices/intersession/` |
 | `npm run intersession` | le travail intersession sur les points de fidélité |
+| `npm run proposition` | le lint et les tests de la proposition de `exercices/fusion/` |
+| `npm run fusion` | la grille de décision de `docs/decision-fusion.md` |
+| `npm run anonymat` | le ticket anonymisé de `exercices/confidentialite/ticket-anonymise.txt` |
 
 Si une commande affiche « Vérificateur introuvable », `df-verifications` n’est pas cloné à côté de `df-commandes` : la commande indique quoi taper.
 
