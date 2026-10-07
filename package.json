@@ -19,6 +19,9 @@
     "devis-du-jour": "node scripts/verifier.js devis-du-jour",
     "recette": "node scripts/verifier.js recette",
     "intersession": "node scripts/verifier.js intersession",
+    "proposition": "eslint exercices/fusion && node --disable-warning=ExperimentalWarning --test exercices/fusion/proposition-tests.js",
+    "fusion": "node scripts/verifier.js fusion",
+    "anonymat": "node scripts/verifier.js anonymat",
     "lint": "eslint .",
     "start:local": "node --disable-warning=ExperimentalWarning --env-file=.env src/server.js"
   },
