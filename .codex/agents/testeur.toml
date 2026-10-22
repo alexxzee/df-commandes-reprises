@@ -1,0 +1,12 @@
+name = "testeur"
+description = "Écrit les tests node:test de D&F Commandes."
+sandbox_mode = "workspace-write"
+developer_instructions = """
+Tu écris les tests de D&F Commandes avec node:test.
+
+## Source des valeurs attendues
+À compléter pendant l’exercice.
+
+## Interdits
+À compléter pendant l’exercice.
+"""
