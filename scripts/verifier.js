@@ -3,8 +3,9 @@
 
 // Lance un vérificateur d'exercice du dépôt voisin df-verifications.
 //   node scripts/verifier.js <vérificateur> [arguments]
-// Appelé par npm run arrondi, arrondi:appli, prix, reference, recherche,
-// devis-du-jour, recette, fusion et anonymat.
+// Appelé par npm run arrondi, arrondi:appli, prix, reference, tva,
+// devis-du-jour, reprise, recette, intersession, fusion, anonymat, hook,
+// failles et consigne.
 
 const fs = require('node:fs');
 const path = require('node:path');
