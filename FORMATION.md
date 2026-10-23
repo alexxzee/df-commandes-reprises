@@ -59,7 +59,8 @@ Le formateur lit votre dépôt sur GitHub.
 | `npm run intersession` | le travail intersession sur les points de fidélité |
 | `npm run proposition` | le lint et les tests de la proposition de `exercices/fusion/` |
 | `npm run fusion` | la grille de décision de `docs/decision-fusion.md` |
-| `npm run anonymat` | le ticket anonymisé de `exercices/confidentialite/ticket-anonymise.txt` |
+| `npm run anonymat` | le ticket anonymisé et masqué de `exercices/confidentialite/ticket-anonymise.txt` |
+| `npm run chiffrer` | chiffre `exercices/confidentialite/export-clients.csv` dans `export-clients.chiffre`, avec la phrase de passe de la variable `DF_CLE_EXPORT` (`npm run chiffrer -- --dechiffrer` l’affiche en clair) |
 | `npm run hook` | le hook branché dans le fichier de votre outil, sur des actions simulées, sans l’assistant |
 | `npm run failles` | la grille de `docs/failles.md`, posée sur `exercices/failles/import-clients.js` |
 | `npm run consigne` | la consigne de délégation de `docs/consigne-delegation.md` |
@@ -72,7 +73,7 @@ Ils existent déjà, vides : ouvrez-les et remplissez-les, sans créer de dossie
 
 ## Fichiers à ne pas modifier
 
-Les fichiers qui commencent par le commentaire « Fichier de la formation : ne pas modifier. », ainsi que `package.json`, `package-lock.json` et `test/caracterisation/export-attendu.csv`, qui ne peuvent pas porter de commentaire.
+Les fichiers qui commencent par le commentaire « Fichier de la formation : ne pas modifier. », ainsi que `package.json`, `package-lock.json`, `test/caracterisation/export-attendu.csv` et `exercices/confidentialite/export-clients.csv`, qui ne peuvent pas porter de commentaire.
 
 Les agents fournis sont aussi des fichiers de la formation : ne les modifiez pas. Leur en-tête doit rester en première ligne, la mention vient donc juste après lui. Ce sont `.github/agents/refacto.agent.md`, `chef-equipe-web.agent.md`, `dev-web.agent.md`, `testeur-web.agent.md` et `relecteur-web.agent.md`, les agents de l’équipe web de `.claude/agents/` (`chef-equipe-web.md`, `dev-web.md`, `testeur-web.md`, `relecteur-web.md`), et les agents fournis dans `.codex/agents/` (`refacto.toml`, `dev-web.toml`, `testeur-web.toml`, `relecteur-web.toml`). Les specs `docs/conditions-paiement.md` et `docs/programme-fidelite.md`, la constitution `specs/constitution.md` et la spec reçue `specs/annulation-commande.md` ne se modifient pas non plus.
 

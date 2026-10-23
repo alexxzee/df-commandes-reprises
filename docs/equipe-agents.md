@@ -1,12 +1,5 @@
 # Équipe d’agents : constats
 
-## Sessions parallèles
-
-| Dossier | Ligne ajoutée que montre git diff README.md |
-|---|---|
-| df-commandes | +Page des devis du jour : GET /devis/du-jour (session A) |
-| df-commandes-essai | +Essai de session parallèle (session B) |
-
 ## Orchestration
 
 | Sous-agent | Première phrase de la consigne reçue | Une information de la demande absente de sa consigne |
