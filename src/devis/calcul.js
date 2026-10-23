@@ -12,7 +12,9 @@ const PLAFOND_REMISE = 0.15;
  * @returns {number} Montant arrondi à deux décimales.
  */
 function arrondir(montant) {
-  return Math.round(montant * 100) / 100;
+  // En virgule flottante, 1.005 * 100 vaut 100.49999999999999 : le produit est
+  // ramené à 15 chiffres significatifs avant l'arrondi au centime le plus proche.
+  return Math.round(Number((montant * 100).toPrecision(15))) / 100;
 }
 
 /**
