@@ -11,6 +11,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/), ver
 ### Corrigé
 - La remise sur quantité s’applique dès 10 unités, seuil inclus, comme le prévoit la spec.
 - Le cumul des remises est plafonné à 15 % du brut ; la remise grand compte est réduite d’autant.
+- Les montants s’arrondissent au centime le plus proche, y compris au demi-centime : 1,005 € donne 1,01 € (l’arrondi en virgule flottante donnait 1 €).
 
 ## [1.4.2] - 2024-02-08
 
