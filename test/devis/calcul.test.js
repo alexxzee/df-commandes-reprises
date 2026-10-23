@@ -89,6 +89,13 @@ describe('§ 6. TVA et arrondis', () => {
     assert.deepEqual([devis.totalHT, devis.tva, devis.totalTTC], [36.25, 7.25, 43.5]);
   });
 
+  test('une ligne de 1 unité à 1,005 € HT coûte 1,01 € net', () => {
+    const devis = calculerDevis(client, [{ produit: { reference: 'C', prix_ht: 1.005 }, quantite: 1 }]);
+    // 1,005 arrondi au centime le plus proche : 1,01 ; avec 25 de port : 26,01 HT
+    assert.equal(devis.lignes[0].net, 1.01);
+    assert.equal(devis.totalHT, 26.01);
+  });
+
   test('arrondir conserve deux décimales', () => {
     assert.equal(arrondir(1.005 * 1000), 1005);
     assert.equal(arrondir(2.344), 2.34);
