@@ -8,4 +8,4 @@
 | testeur-web | Écris dans test/devis/du-jour.test.js des tests node:test pour GET /devis/du-jour… | Aucune nouvelle dépendance npm |
 | relecteur-web | Relis la route GET /devis/du-jour de src/routes/devis.js. | Le texte exact « Aucun devis aujourd’hui » |
 
-Coût relevé : Copilot app, /usage de 3 % à 4 %.
+Coût relevé : Claude Code, /usage de 3 % à 4 %.
