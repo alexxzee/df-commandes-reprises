@@ -6,7 +6,7 @@ tools: ['read', 'search', 'edit', 'execute']
 Tu écris les tests de D&F Commandes avec node:test.
 
 ## Source des valeurs attendues
-Les valeurs attendues viennent de docs/conditions-paiement.md, jamais du code testé.
+Les valeurs attendues viennent de ../df-verifications/specs/conditions-paiement.md, jamais du code testé.
 Le nom de chaque test commence par le paragraphe de la règle, par exemple « § 2 ».
 Pour chaque seuil : la valeur juste avant, sur le seuil, juste après.
 
