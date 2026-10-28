@@ -77,12 +77,14 @@ jobs:
         run: npm install -g @github/copilot
       - name: Préparer le prompt de revue (consignes versionnées + diff de la PR)
         if: steps.jeton.outputs.present == 'true'
+        env:
+          BASE: ${{ github.base_ref }}
         run: |
           {
             cat .github/prompts/revue-pr.txt
             echo
             echo '--- DIFF DE LA PULL REQUEST ---'
-            git diff --unified=3 "origin/${{ github.base_ref }}...HEAD" -- . ':!package-lock.json' | head -c 60000
+            git diff --unified=3 "origin/$BASE...HEAD" -- . ':!package-lock.json' | head -c 60000
           } > "$RUNNER_TEMP/prompt-revue.txt"
       - name: Revue par Copilot
         id: revue
