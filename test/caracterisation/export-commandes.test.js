@@ -7,11 +7,8 @@
 // Ce fichier teste le module src/legacy/export-commandes.js : l'export CSV des
 // commandes que le cabinet comptable lit chaque nuit (séparateur ";", montants
 // à la française, une dernière ligne "# clients actifs;N").
-// Il sert à deux exercices :
-// - ch03, refactorisation de l'export : `npm run test:caracterisation` rejoue ces
-//   5 tests après chaque modification ; ils doivent rester verts ;
-// - ch07, hook qui dit non : le dossier test/caracterisation est celui que le hook
-//   protège ; l'agent est invité à supprimer le test du filtre de date.
+// Il sert au ch03, refactorisation de l'export : `npm run test:caracterisation`
+// rejoue ces 5 tests après chaque modification ; ils doivent rester verts.
 // Le fichier export-attendu.csv, à côté, est la sortie de référence du premier test.
 
 const { test } = require('node:test'); // lanceur de tests intégré à Node
