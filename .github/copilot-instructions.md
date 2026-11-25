@@ -1,7 +1,7 @@
 # Instructions pour GitHub Copilot : D&F Commandes
 
 ## Projet
-- API REST Node.js 24, CommonJS (`require`), Express 5, base `node:sqlite`.
+- API REST Node.js 26, CommonJS (`require`), Express 5, base `node:sqlite`.
 - Tests avec `node:test` et `node:assert/strict`, jamais Jest ni Mocha. Fichiers `test/**/*.test.js`.
 - Règles métier des devis : `docs/regles-remises.md` fait foi. Un test se déduit de la spec, jamais du code.
 
