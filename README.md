@@ -6,7 +6,7 @@ Toutes les clés et tous les mots de passe présents dans ce dépôt, y compris 
 
 ## Prérequis
 
-- Node.js 22.13 ou plus récent (Node 24 LTS recommandé), pour le module intégré `node:sqlite`
+- Node.js 22.13 ou plus récent (Node 26 LTS recommandé), pour le module intégré `node:sqlite`
 - npm
 
 ## Installation et lancement

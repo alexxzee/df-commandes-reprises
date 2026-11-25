@@ -6,7 +6,7 @@ Les principes que toute évolution respecte. L’agent les lit avant d’écrire
 
 ## Code
 
-1. Node.js 24, modules CommonJS : `'use strict';` en première ligne, `require(...)`, `module.exports = { ... }`.
+1. Node.js 26, modules CommonJS : `'use strict';` en première ligne, `require(...)`, `module.exports = { ... }`.
 2. Aucune dépendance ajoutée.
 3. Noms de fonctions, de variables et de champs JSON en français, en camelCase, sans accent : `totalHT`, `clientId`.
 4. Une erreur HTTP renvoie un corps `{ "erreur": "<message en français>" }`.
